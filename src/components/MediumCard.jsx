@@ -1,4 +1,5 @@
 import React from "react";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // Import your image assets here
@@ -11,6 +12,8 @@ import NationalPark from "./assets/NationalPark.png";
 import UniqueStays from "./assets/UniqueStay.png";
 
 export default function MediumCard() {
+  
+
   return (
     <div className="py-4 mt-56 sm:mt-96 max-w-7xl px-64">
             <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1>
