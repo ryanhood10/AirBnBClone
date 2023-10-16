@@ -2,9 +2,12 @@ import React from "react";
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns'; // Import the format function from date-fns
 import Header from "../components/Header"
+import axios from 'axios';
 
-export default function Search(){
+
+export default function Search({searchResults}){
    
+    console.log(searchResults)
     // Get the current location and query parameters
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -41,4 +44,15 @@ export default function Search(){
             </main>
         </div>
     )
-}
+};
+
+export async function getServerSideProps() {
+    const searchResults = await fetch("https://links.papareact.com/isz").then(res => res.json());
+
+    return {
+        props: {
+            searchResults,
+        }
+    }
+
+};
