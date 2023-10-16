@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // Import your image assets here
@@ -13,21 +12,12 @@ import UniqueStays from "./assets/UniqueStay.png";
 
 export default function MediumCard() {
   return (
-    <div className="py-4 mt-96 flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold py-2">Live Anywhere </h1>
-      <Carousel
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop={true}
-        autoPlay={true}
-        interval={5000} // Adjust the interval as needed
-        transitionTime={500} // Adjust the transition time as needed
-        className="relative w-96 h-80"
-        renderThumbs={() => {}}
-      >
+    <div className="py-4 mt-96 ">
+      
+     <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
         <div className="relative">
-          <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={BeachFront} alt="card" />
+          <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out rounded-xl">
+            <img src={BeachFront} alt="card" className="rounded-xl" />
             <h3 className="text-2xl mt-3">Beachfront</h3>
 
           </div>
@@ -35,46 +25,47 @@ export default function MediumCard() {
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={OutdoorLiving} alt="card" />
+            <img src={OutdoorLiving} alt="card" className="rounded-xl"/>
             <h3 className="text-2xl mt-3">Outdoor Living</h3>
           </div>
         </div>
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={Castles} alt="card" />
+            <img src={Castles} alt="card" className="rounded-xl"/>
             <h3 className="text-2xl mt-3">Castles</h3>
           </div>
         </div>
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={TreeHouse} alt="card" />
+            <img src={TreeHouse} alt="card" className="rounded-xl"/>
             <h3 className="text-2xl mt-3">Treehouses</h3>
           </div>
         </div>
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={TinyHome} alt="card" />
+            <img src={TinyHome} alt="card" className="rounded-xl"/>
             <h3 className="text-2xl mt-3">TinyHome</h3>
           </div>
         </div>
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={NationalPark} alt="card" />
+            <img src={NationalPark} alt="card" className="rounded-xl" />
             <h3 className="text-2xl mt-3">National Park</h3>
           </div>
         </div>
 
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
-            <img src={UniqueStays} alt="card" />
+            <img src={UniqueStays} alt="card" className="rounded-xl"/>
             <h3 className="text-2xl mt-3">Unique Stays</h3>
           </div>
         </div>
-      </Carousel>
+
+        </div>
     </div>
   );
 }
