@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns'; // Import the format function from date-fns
-
+import Header from "../components/Header"
 
 export default function Search(){
    
@@ -21,6 +21,8 @@ export default function Search(){
   const range = formattedStartDate && formattedEndDate ? `${formattedStartDate} - ${formattedEndDate}` : "";
     return(
         <div>
+            <Header placeholder={`${locationParam} | ${range} | ${noOfGuestsParam} guests`} />
+
             <main className="flex">
                 <section className="flex-grow pt-14 px-6">
                     <p className="text-xs">300+ Stays {range} for {noOfGuestsParam} guests</p>

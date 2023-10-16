@@ -16,11 +16,11 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
         <Routes>
         <Route
             path="/"
             element={<React.Fragment>
+                      <Header />
                      <Banner />
                     {/* <MediumCard /> */}
                     <MediumCardSlides />

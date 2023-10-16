@@ -7,7 +7,7 @@ import { DateRangePicker } from 'react-date-range';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-function Header () {
+function Header ({placeholder}) {
 
     const [searchInput, setSearchInput] =  useState("");
     const [startDate, setStartDate] = useState(new Date());
@@ -32,7 +32,7 @@ function Header () {
     }
 
     const search = () => {
-        // Build the query string with the parameters
+        // Build the query string with the parameters -allows us to search with multiple input queries
         const queryParams = `?location=${searchInput}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&noOfGuests=${noOfGuests}`;
         
         // Navigate to the `/search` page with the query string
@@ -59,7 +59,7 @@ function Header () {
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 className='flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400'
-                type='text' placeholder='Start your search' />
+                type='text' placeholder={placeholder || 'Start your search'} />
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2"
                 />
 
