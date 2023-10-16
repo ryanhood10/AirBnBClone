@@ -4,6 +4,8 @@ import {SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon, UsersIcon} from '@he
 import 'react-date-range/dist/styles.css' //for calander
 import 'react-date-range/dist/theme/default.css' //for calander 
 import { DateRangePicker } from 'react-date-range';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Header () {
 
@@ -11,6 +13,7 @@ function Header () {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [noOfGuests, setNoOfGuests] = useState(1);
+    const navigate = useNavigate();
 
     const selectionRange = {
         startDate: startDate,
@@ -28,15 +31,26 @@ function Header () {
         setSearchInput("");
     }
 
+    const search = () => {
+        // Build the query string with the parameters
+        const queryParams = `?location=${searchInput}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&noOfGuests=${noOfGuests}`;
+        
+        // Navigate to the `/search` page with the query string
+        navigate(`/search${queryParams}`);
+      }
+      
+    
 
     return (
         <header className='sticky top-0 z-50 grid grid-col-3 bg-white shadow-md py-5 px-5 md:px-10'>
             {/* Left */}
             <div className='relative flex items-center h-10 cursor-pointer'>
+                <Link to="/">
                 <img src={Logo} className='h-14 lg:h-24'
                 layout="fill"
                 objectFit="contain"
                 objectPosition="left"/>
+                </Link>
             </div>
 
             {/* Middle - Search */}
@@ -89,7 +103,10 @@ function Header () {
                         <button onClick={resetInput} className='flex-grow text-gray-500'>Cancel
                         </button>
 
-                        <button className='flex-grow text-red-400'>Search
+                        <button
+                         className='flex-grow text-red-400'
+                         onClick={search}
+                        >Search
                         </button>
                     </div>
                 </div>
