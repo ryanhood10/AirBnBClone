@@ -1,5 +1,4 @@
 import React from "react";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // Import your image assets here
@@ -15,7 +14,7 @@ export default function MediumCard() {
   
 
   return (
-    <div className="py-4 mt-56 sm:mt-96 max-w-7xl px-64">
+    <div className="py-4 mt-8 max-w-7xl px-64 items-center">
             <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1>
      <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
         <div className="relative">
