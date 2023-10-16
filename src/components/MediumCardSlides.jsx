@@ -53,7 +53,6 @@ const cardData = [
 export default function MediumCardSlides() {
   return (
     <div className="">
-      <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1>
       <div className="flex space-x-3 overflow-scroll scrollbar-hide">
         {cardData.map((card) => (
           <MediumCard key={card.id} image={card.image} title={card.title} />

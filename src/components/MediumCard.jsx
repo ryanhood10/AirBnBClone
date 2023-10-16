@@ -12,8 +12,8 @@ import UniqueStays from "./assets/UniqueStay.png";
 
 export default function MediumCard() {
   return (
-    <div className="py-4 mt-96 ">
-      
+    <div className="py-4 mt-96 max-w-[80%] px-56 items-center">
+            <h1 className="text-4xl font-semibold py-8">Live Anywhere</h1>
      <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
         <div className="relative">
           <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out rounded-xl">
