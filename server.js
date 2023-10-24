@@ -15,12 +15,17 @@ app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 // Serve static files from the 'build' directory
-app.use(express.static(path.join(__dirname, 'build')));
+app.use((req, res, next) => {
+  console.log(`Received request for: ${req.url}`);
+  next();
+});
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
+  console.log(`Sending ${req.url} to React app`);
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+
 
 // Start the server
 app.listen(PORT, () => {

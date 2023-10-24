@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { format } from "date-fns";
 import Header from "../components/Header";
 import { data2 } from "../data/data2";
 import { HeartIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid"
-import axios from "axios";
+// import axios from "axios";
 // import Map from '../components/Map'
 
 export default function Search({ searchResults }) {
@@ -84,7 +84,7 @@ export default function Search({ searchResults }) {
           {closestResults.map((result, index) => (
             <div className="flex py-7 px-2 pr-4 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition-duration-200 ease-out">
                 <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0 first:border-t" key={index}>
-                <img className="rounded-2xl max-h-56" layout="fill" objectFit="cover" src={result.img} />
+                <img alt="vacation rental, short-term rental, luxery stay" className="rounded-2xl max-h-56" layout="fill" objectFit="cover" src={result.img} />
                 </div>
 
                 <div className="flex flex-col flex-grow pl-5">
@@ -129,10 +129,7 @@ export default function Search({ searchResults }) {
           </div>
         </section>
 
-        <section className=" ">
-            {/* <Map /> */}
-        </section>
-
+   
       </main>
     </div>
   );
